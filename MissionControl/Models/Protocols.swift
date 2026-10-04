@@ -52,7 +52,6 @@ extension FlightStatisticsProviding {
     }
 }
 
-/// A plain bundle of flights (for one aircraft, one mission, or the whole operation) that can report the same statistics.
 struct FlightSummary: FlightStatisticsProviding {
     let flights: [FlightRecord]
 }

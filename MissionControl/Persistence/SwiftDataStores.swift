@@ -60,6 +60,7 @@ struct SwiftDataStack {
     }
 }
 
+/// Makes the stored rows match `items`: updates existing rows, inserts new ones and deletes any row whose entity is no longer in the list.
 private func replaceAll<Model: PersistentModel, Entity: PersistableEntity>(
     _ items: [Entity],
     of modelType: Model.Type,

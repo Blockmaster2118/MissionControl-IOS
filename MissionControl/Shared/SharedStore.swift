@@ -17,7 +17,7 @@ struct SharedBrief: Codable, Identifiable, Equatable {
 }
 
 enum SharedStore {
-    static let groupID = "group.com.example.MissionControl"  
+    static let groupID = "group.com.example.MissionControl"   
     private static var root: URL { FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: groupID) ?? FileManager.default.temporaryDirectory }
     private static var snapshotURL: URL { root.appendingPathComponent("next-mission.json") }
     private static var inbox: URL {
@@ -34,6 +34,7 @@ enum SharedStore {
         (try? Data(contentsOf: snapshotURL)).flatMap { try? JSONDecoder().decode(MissionSnapshot.self, from: $0) }
     }
 
+    /// Returns false when the same brief is already waiting (duplicate import).
     @discardableResult static func save(_ b: SharedBrief) -> Bool {
         guard !pendingBriefs().contains(where: { $0.content == b.content }), let d = try? JSONEncoder().encode(b) else { return false }
         return (try? d.write(to: inbox.appendingPathComponent("\(b.id).json"), options: .atomic)) != nil

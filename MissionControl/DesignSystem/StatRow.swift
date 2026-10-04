@@ -24,7 +24,8 @@ struct StatRow: View {
     }
 }
 
-/// A thin divider matching the control palette, for separating rows within a card without using a full Section/List.
+/// A thin divider matching the control palette, for separating rows
+/// within a card without using a full Section/List.
 struct ControlDivider: View {
     var body: some View {
         Rectangle()
