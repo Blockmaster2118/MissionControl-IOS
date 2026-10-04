@@ -138,6 +138,26 @@ final class DataStore: ObservableObject {
         Array(missions.filter { $0.status == .flown }.suffix(3).reversed())
     }
 
+    // MARK: - Widget
+
+    private func publishNextMissionSnapshot() {
+        let today = Calendar.current.startOfDay(for: Date())
+        let next = missions.first { $0.status != .flown && $0.scheduledDate >= today }
+        SharedStore.writeSnapshot(next.map { mission in
+            MissionSnapshot(
+                missionName: mission.name,
+                site: mission.site,
+                scheduledDate: mission.scheduledDate,
+                aircraftName: aircraft(for: mission.aircraftID)?.name ?? "Unknown aircraft",
+                checksDone: mission.inspection.filter { $0.result != .notChecked }.count,
+                checksTotal: mission.inspection.count,
+                isReady: mission.status == .ready,
+                updatedAt: Date()
+            )
+        })
+        WidgetCenter.shared.reloadAllTimelines()
+    }
+
     // MARK: - Demo data
 
     /// Simulated aircraft and mission so the whole workflow can be demonstrated without a real drone.

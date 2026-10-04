@@ -22,7 +22,7 @@ struct MissionControlApp: App {
             ContentView()
                 .environmentObject(dataStore)
                 .onChange(of: scenePhase) { _, phase in
-                    if phase == .active { dataStore.loadAll() }   
+                    if phase == .active { dataStore.loadAll() }   // picks up briefs imported by the Share Extension
                 }
         }
     }
