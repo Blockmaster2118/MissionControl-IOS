@@ -2,8 +2,7 @@
 //  MissionDetailView.swift
 //  MissionControl
 //
-//  Screen 2: one record for each planned operation - the mission, its
-//  inspection, any attached site briefs and the flight that was flown.
+//  Screen 2: one record for each planned operation - the mission, its inspection, any attached site briefs and the flight that was flown.
 //
 
 import SwiftUI

@@ -2,8 +2,7 @@
 //  PreFlightInspectionView.swift
 //  MissionControl
 //
-//  Screen 4: records Pass / Fail / Not checked for each required item.
-//  The readiness rules themselves live in CompletePreFlightInspectionUseCase.
+//  Screen 4: records Pass / Fail / Not checked for each required item. The readiness rules themselves live in CompletePreFlightInspectionUseCase.
 //
 
 import SwiftUI
