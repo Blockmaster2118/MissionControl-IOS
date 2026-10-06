@@ -10,6 +10,7 @@
 		E65791B93072085500FC1FCA /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E65791B83072085400FC1FCA /* WidgetKit.framework */; };
 		E65791BB3072085500FC1FCA /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E65791BA3072085500FC1FCA /* SwiftUI.framework */; };
 		E65791C63072085600FC1FCA /* MissionControlWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = E65791B63072085400FC1FCA /* MissionControlWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E65793C33073D0CB00FC1FCA /* MissionControlShareExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = E65793B93073D0CB00FC1FCA /* MissionControlShareExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +35,13 @@
 			remoteGlobalIDString = E65791B53072085400FC1FCA;
 			remoteInfo = MissionControlWidgetExtension;
 		};
+		E65793C13073D0CB00FC1FCA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E6578F13306FCE8C00FC1FCA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E65793B83073D0CB00FC1FCA;
+			remoteInfo = MissionControlShareExtension;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -43,6 +51,7 @@
 			dstSubfolder = PlugIns;
 			files = (
 				E65791C63072085600FC1FCA /* MissionControlWidgetExtension.appex in Embed Foundation Extensions */,
+				E65793C33073D0CB00FC1FCA /* MissionControlShareExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 		};
@@ -55,6 +64,7 @@
 		E65791B63072085400FC1FCA /* MissionControlWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MissionControlWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		E65791B83072085400FC1FCA /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		E65791BA3072085500FC1FCA /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		E65793B93073D0CB00FC1FCA /* MissionControlShareExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MissionControlShareExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -72,6 +82,20 @@
 			);
 			target = E65791B53072085400FC1FCA /* MissionControlWidgetExtension */;
 		};
+		E65793C63073D0CB00FC1FCA /* Exceptions for "MissionControlShareExtension" folder in "MissionControlShareExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = E65793B83073D0CB00FC1FCA /* MissionControlShareExtension */;
+		};
+		E65793CB3073D16F00FC1FCA /* Exceptions for "MissionControl" folder in "MissionControlShareExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Shared/SharedStore.swift,
+			);
+			target = E65793B83073D0CB00FC1FCA /* MissionControlShareExtension */;
+		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -79,6 +103,7 @@
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
 				E65791CF307218F800FC1FCA /* Exceptions for "MissionControl" folder in "MissionControlWidgetExtension" target */,
+				E65793CB3073D16F00FC1FCA /* Exceptions for "MissionControl" folder in "MissionControlShareExtension" target */,
 			);
 			path = MissionControl;
 			sourceTree = "<group>";
@@ -99,6 +124,14 @@
 				E65791CA3072085600FC1FCA /* Exceptions for "MissionControlWidget" folder in "MissionControlWidgetExtension" target */,
 			);
 			path = MissionControlWidget;
+			sourceTree = "<group>";
+		};
+		E65793BA3073D0CB00FC1FCA /* MissionControlShareExtension */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				E65793C63073D0CB00FC1FCA /* Exceptions for "MissionControlShareExtension" folder in "MissionControlShareExtension" target */,
+			);
+			path = MissionControlShareExtension;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -126,6 +159,11 @@
 				E65791B93072085500FC1FCA /* WidgetKit.framework in Frameworks */,
 			);
 		};
+		E65793B63073D0CB00FC1FCA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			files = (
+			);
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -136,6 +174,7 @@
 				E6578F2B306FCE8D00FC1FCA /* MissionControlTests */,
 				E6578F35306FCE8D00FC1FCA /* MissionControlUITests */,
 				E65791BC3072085500FC1FCA /* MissionControlWidget */,
+				E65793BA3073D0CB00FC1FCA /* MissionControlShareExtension */,
 				E65791B73072085400FC1FCA /* Frameworks */,
 				E6578F1C306FCE8D00FC1FCA /* Products */,
 			);
@@ -148,6 +187,7 @@
 				E6578F28306FCE8D00FC1FCA /* MissionControlTests.xctest */,
 				E6578F32306FCE8D00FC1FCA /* MissionControlUITests.xctest */,
 				E65791B63072085400FC1FCA /* MissionControlWidgetExtension.appex */,
+				E65793B93073D0CB00FC1FCA /* MissionControlShareExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -177,6 +217,7 @@
 			);
 			dependencies = (
 				E65791C53072085600FC1FCA /* PBXTargetDependency */,
+				E65793C23073D0CB00FC1FCA /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				E6578F1D306FCE8D00FC1FCA /* MissionControl */,
@@ -246,6 +287,24 @@
 			productReference = E65791B63072085400FC1FCA /* MissionControlWidgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		E65793B83073D0CB00FC1FCA /* MissionControlShareExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E65793C73073D0CB00FC1FCA /* Build configuration list for PBXNativeTarget "MissionControlShareExtension" */;
+			buildPhases = (
+				E65793B53073D0CB00FC1FCA /* Sources */,
+				E65793B63073D0CB00FC1FCA /* Frameworks */,
+				E65793B73073D0CB00FC1FCA /* Resources */,
+			);
+			buildRules = (
+			);
+			fileSystemSynchronizedGroups = (
+				E65793BA3073D0CB00FC1FCA /* MissionControlShareExtension */,
+			);
+			name = MissionControlShareExtension;
+			productName = MissionControlShareExtension;
+			productReference = E65793B93073D0CB00FC1FCA /* MissionControlShareExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -270,6 +329,10 @@
 					E65791B53072085400FC1FCA = {
 						CreatedOnToolsVersion = 27.0;
 					};
+					E65793B83073D0CB00FC1FCA = {
+						CreatedOnToolsVersion = 27.0;
+						LastSwiftMigration = 2700;
+					};
 				};
 			};
 			buildConfigurationList = E6578F16306FCE8C00FC1FCA /* Build configuration list for PBXProject "MissionControl" */;
@@ -290,6 +353,7 @@
 				E6578F27306FCE8D00FC1FCA /* MissionControlTests */,
 				E6578F31306FCE8D00FC1FCA /* MissionControlUITests */,
 				E65791B53072085400FC1FCA /* MissionControlWidgetExtension */,
+				E65793B83073D0CB00FC1FCA /* MissionControlShareExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -311,6 +375,11 @@
 			);
 		};
 		E65791B43072085400FC1FCA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			files = (
+			);
+		};
+		E65793B73073D0CB00FC1FCA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			files = (
 			);
@@ -338,6 +407,11 @@
 			files = (
 			);
 		};
+		E65793B53073D0CB00FC1FCA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			files = (
+			);
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -355,6 +429,11 @@
 			isa = PBXTargetDependency;
 			target = E65791B53072085400FC1FCA /* MissionControlWidgetExtension */;
 			targetProxy = E65791C43072085600FC1FCA /* PBXContainerItemProxy */;
+		};
+		E65793C23073D0CB00FC1FCA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E65793B83073D0CB00FC1FCA /* MissionControlShareExtension */;
+			targetProxy = E65793C13073D0CB00FC1FCA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -686,6 +765,65 @@
 			};
 			name = Release;
 		};
+		E65793C43073D0CB00FC1FCA /* Debug configuration for PBXNativeTarget "MissionControlShareExtension" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = MissionControl/MissionControl.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MissionControlShareExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MissionControlShareExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Rohan.MissionControl.MissionControlShareExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E65793C53073D0CB00FC1FCA /* Release configuration for PBXNativeTarget "MissionControlShareExtension" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = MissionControl/MissionControl.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MissionControlShareExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MissionControlShareExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Rohan.MissionControl.MissionControlShareExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -726,6 +864,14 @@
 			buildConfigurations = (
 				E65791C83072085600FC1FCA /* Debug configuration for PBXNativeTarget "MissionControlWidgetExtension" */,
 				E65791C93072085600FC1FCA /* Release configuration for PBXNativeTarget "MissionControlWidgetExtension" */,
+			);
+			defaultConfigurationName = Release;
+		};
+		E65793C73073D0CB00FC1FCA /* Build configuration list for PBXNativeTarget "MissionControlShareExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E65793C43073D0CB00FC1FCA /* Debug configuration for PBXNativeTarget "MissionControlShareExtension" */,
+				E65793C53073D0CB00FC1FCA /* Release configuration for PBXNativeTarget "MissionControlShareExtension" */,
 			);
 			defaultConfigurationName = Release;
 		};

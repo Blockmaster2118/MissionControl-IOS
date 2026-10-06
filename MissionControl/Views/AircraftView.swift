@@ -2,8 +2,7 @@
 //  AircraftView.swift
 //  MissionControl
 //
-//  Screen 3: the Aircraft Register - which aircraft can proceed
-//  through the readiness workflow and which are grounded.
+//  Screen 3: the Aircraft Register - which aircraft can proceed through the readiness workflow and which are grounded.
 //
 
 import SwiftUI

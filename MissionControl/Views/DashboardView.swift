@@ -2,14 +2,9 @@
 //  DashboardView.swift
 //  MissionControl
 //
-//  Screen 1: what needs attention next - today's outstanding missions,
-//  missions still awaiting inspection, grounded aircraft and recently
-//  flown missions.
+//  Screen 1: what needs attention next - today's outstanding missions, missions still awaiting inspection, grounded aircraft and recently flown missions.
 //
-//  The readiness summary is broken into stat boxes - the same visual
-//  language of a timing screen - so the operator can see how
-//  many missions are waiting, how many aircraft are grounded and how
-//  much time has been flown at a glance.
+//  The readiness summary is broken into stat boxes - the same visual language of a timing screen - so the operator can see how many missions are waiting, how many aircraft are grounded and how much time has been flown at a glance.
 //
 
 import SwiftUI
@@ -44,6 +39,25 @@ struct DashboardView: View {
                                     .font(.system(size: 14))
                                     .foregroundStyle(.orange)
                             }
+                        }
+                    }
+
+                    VStack(alignment: .leading, spacing: 12) {
+                        SectionHeader(title: "Shared Briefs Waiting")
+                        if dataStore.briefs.isEmpty {
+                            Text("Nothing shared yet. Share a link from Safari to MissionControl.")
+                                .font(.system(size: 14))
+                                .foregroundStyle(Color.controlTextSecondary)
+                        } else {
+                            ForEach(dataStore.briefs) { brief in
+                                Label(brief.title, systemImage: "link")
+                                    .font(.system(size: 14))
+                                    .foregroundStyle(Color.controlTextPrimary)
+                                    .lineLimit(1)
+                            }
+                            Text("Open a mission and choose Attach a shared brief.")
+                                .font(.system(size: 12))
+                                .foregroundStyle(Color.controlTextSecondary)
                         }
                     }
 

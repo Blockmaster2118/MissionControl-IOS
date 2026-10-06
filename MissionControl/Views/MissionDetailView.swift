@@ -2,8 +2,7 @@
 //  MissionDetailView.swift
 //  MissionControl
 //
-//  Screen 2: one record for each planned operation - the mission, its
-//  inspection, any attached site briefs and the flight that was flown.
+//  Screen 2: one record for each planned operation - the mission, its inspection, any attached site briefs and the flight that was flown.
 //
 
 import SwiftUI
@@ -23,6 +22,25 @@ struct MissionDetailView: View {
             }
         }
         .background(Color.controlBackground.ignoresSafeArea())
+    }
+
+    /// A shared link opens in Safari when tapped. Shared text is shown as plain text.
+    @ViewBuilder
+    private func briefView(_ brief: String) -> some View {
+        if let url = URL(string: brief.trimmingCharacters(in: .whitespacesAndNewlines)), ["http", "https"].contains(url.scheme?.lowercased()) {
+            Link(destination: url) {
+                Label(brief, systemImage: "link")
+                    .font(.system(size: 13))
+                    .foregroundStyle(Color.controlAccent)
+                    .lineLimit(2)
+                    .multilineTextAlignment(.leading)
+            }
+        } else {
+            Text(brief)
+                .font(.system(size: 13))
+                .foregroundStyle(Color.controlTextPrimary)
+                .lineLimit(3)
+        }
     }
 
     private func content(for mission: Mission) -> some View {
@@ -71,10 +89,7 @@ struct MissionDetailView: View {
                             .foregroundStyle(Color.controlTextSecondary)
                     }
                     ForEach(mission.briefs, id: \.self) { brief in
-                        Text(brief)
-                            .font(.system(size: 13))
-                            .foregroundStyle(Color.controlTextPrimary)
-                            .lineLimit(3)
+                        briefView(brief)
                     }
                     if !dataStore.briefs.isEmpty {
                         Menu("Attach a shared brief") {
